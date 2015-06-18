@@ -2,8 +2,8 @@ FROM ubuntu:14.04
 
 RUN apt-get update && apt-get install -y firefox
 
-# Replace [uid] / [gid] by your user id and group id
-RUN export uid=[uid] gid=[gid] && \
+# Replace 1000 / 1000 by your user id and group id
+RUN export uid=1000 gid=1000 && \
     mkdir -p /home/developer && \
     echo "developer:x:${uid}:${gid}:Developer,,,:/home/developer:/bin/bash" >> /etc/passwd && \
     echo "developer:x:${uid}:" >> /etc/group && \
