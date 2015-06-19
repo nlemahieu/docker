@@ -4,6 +4,8 @@ Apache
 
 The Apache HTTP Server, colloquially called Apache), is the world's most widely used web server software.
 
+Put your vhosts in the vhosts directory.
+
 ```
 docker run -d -p 80:80 -p 8080:8080 -v /var/www:/var/www  --net="host" nlemahieu/apache:latest
 
