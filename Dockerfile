@@ -10,7 +10,6 @@ apt-get update && \
 apt-get install -y rabbitmq-server
 
 RUN rabbitmq-plugins enable rabbitmq_management
-RUN gzip -d /usr/share/doc/rabbitmq-server/rabbitmq.config.example.gz
 RUN touch /etc/rabbitmq/rabbitmq.config
 RUN echo "[{rabbit, [{loopback_users, []}]}]." >> /etc/rabbitmq/rabbitmq.config
 
