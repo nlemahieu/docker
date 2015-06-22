@@ -3,13 +3,13 @@
 CoffeeScript is a little language that compiles into JavaScript.
 
 ```
-docker run nlemahieu/coffeescript coffee [CMD]
+docker run -v `pwd`:/pwd -w /pwd nlemahieu/coffeescript coffee [CMD]
 ```
 
 You can also create a new alias on your machine
 
 ```
-alias coffee='docker run nlemahieu/coffeescript coffee'
+alias coffee='docker run -v `pwd`:/pwd -w /pwd nlemahieu/coffeescript coffee coffee'
 ```
 
 Coffeescript documentation: http://coffeescript.org/
