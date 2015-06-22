@@ -6,7 +6,7 @@ CoffeeScript is a little language that compiles into JavaScript.
 docker run nlemahieu/coffeescript coffee [CMD]
 ```
 
-You can also create a new aliais on your machine
+You can also create a new alias on your machine
 
 ```
 alias coffee='docker run nlemahieu/coffeescript coffee'
