@@ -15,7 +15,7 @@ alias coffee='docker run -v `pwd`:/pwd -w /pwd nlemahieu/coffeescript coffee'
 Cake is also available in the docker
 
 ```
-docker run -v `pwd`:/pwd -w /pwd nlemahieu/coffeescript cake
+docker run -v `pwd`:/pwd -w /pwd nlemahieu/coffeescript cake [task]
 ```
 
 ```
