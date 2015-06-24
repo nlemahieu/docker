@@ -9,7 +9,7 @@ npm install -g yo && \
 npm install -g generator-angular
 
 # Replace 1000 / 1000 by your user id and group id
-RUN export uid=1887963959 gid=1001 && \
+RUN export uid=1000 gid=1000 && \
     mkdir -p /home/developer && \
     echo "developer:x:${uid}:${gid}:Developer,,,:/home/developer:/bin/bash" >> /etc/passwd && \
     echo "developer:x:${uid}:" >> /etc/group && \
