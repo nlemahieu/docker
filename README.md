@@ -12,7 +12,7 @@ docker run -ti -v /var/www:/var/www nlemahieu/yeoman yo [CMD]
 or you can add a new alias on your machine
 
 ```
-alias='docker run -ti -v /var/www:/var/www nlemahieu/yeoman yo'
+alias yo='docker run -ti -v /var/www:/var/www nlemahieu/yeoman yo'
 ```
 
 Installed Generator
