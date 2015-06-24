@@ -2,10 +2,13 @@ FROM ubuntu:14.04
 
 RUN apt-get update && \
 apt-get install -y apache2 && \
-apt-get install -y libapache2-mod-php5
-
-RUN a2enmod rewrite
-RUN a2dissite 000-default
+apt-get install -y libapache2-mod-php5 && \
+apt-get install -y php5 && \
+apt-get install -y php5-cli && \
+apt-get install -y php5-mysql && \
+apt-get install -y libapache2-mod-php5 && \
+a2enmod rewrite && \
+a2dissite 000-default
 
 # Replace 1000 / 1000 by your user id and group id
 RUN export uid=1000 gid=1000 && \
