@@ -4,7 +4,13 @@ Grunt
 ![Grunt](http://blog.soat.fr/wp-content/uploads/2014/09/grunt-the-js-task-runner.jpg)
 
 ```
-docker run nlemahieu\grunt grunt
+docker run -ti -v `pwd`:/project nlemahieu/grunt:latest grunt
+```
+
+or you can add a new alias on your machine
+
+```
+alias grunt='docker run -ti -v `pwd`:/project nlemahieu/grunt:latest grunt'
 ```
 
 Installed Plugins
@@ -44,3 +50,19 @@ https://www.npmjs.com/package/grunt-contrib-coffee
 grunt-bower-task
 --
 https://www.npmjs.com/package/grunt-bower-task
+
+grunt-symlink
+--
+https://www.npmjs.com/package/grunt-symlink
+
+grunt-contrib-copy
+--
+https://www.npmjs.com/package/grunt-contrib-copy
+
+grunt-contrib-watch
+--
+https://www.npmjs.com/package/grunt-contrib-watch
+
+grunt-webfont
+--
+https://www.npmjs.com/package/grunt-webfont
