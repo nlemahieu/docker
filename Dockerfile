@@ -2,7 +2,7 @@ FROM ubuntu:14.04
 
 RUN apt-get update && \
 apt-get -y upgrade && \
-apt-get install -y nodejs npm && \
+apt-get install -y nodejs npm git && \
 npm install -g bower && \
 ln -s /usr/bin/nodejs /usr/bin/node
 
@@ -17,3 +17,4 @@ RUN export uid=1000 gid=1000 && \
 
 USER developer
 ENV HOME /home/developer
+WORKDIR /project
