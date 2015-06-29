@@ -8,4 +8,5 @@ do
 	fi;
 done
 echo "\033[32m\033[1;37mRestart apache\033[0m"
+sudo /etc/init.d/mysql start
 sudo /usr/sbin/apache2ctl -D FOREGROUND

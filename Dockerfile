@@ -7,6 +7,7 @@ apt-get install -y php5 && \
 apt-get install -y php5-cli && \
 apt-get install -y php5-mysql && \
 apt-get install -y libapache2-mod-php5 && \
+apt-get install -y mysql-server
 a2enmod rewrite && \
 a2dissite 000-default
 
@@ -27,6 +28,7 @@ ENV APACHE_LOG_DIR      /var/log/apache2
 
 EXPOSE 80
 EXPOSE 8080
+EXPOSE 3306
 
 ADD vhosts/*.conf /etc/apache2/sites-available/
 ADD init.sh /tmp/init.sh
