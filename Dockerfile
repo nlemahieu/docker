@@ -5,8 +5,8 @@ RUN apt-get update && \
 apt-get -y upgrade && \
 apt-get install -y nodejs npm && \
 ln -s /usr/bin/nodejs /usr/bin/node && \
-npm install -g yo bower grunt-cli gulp  && \
-npm install -g generator-angular
+npm install -g yo bower grunt-cli gulp --save-dev  && \
+npm install -g generator-angular --save-dev
 
 # Replace 1000 / 1000 by your user id and group id
 RUN export uid=1000 gid=1000 && \
@@ -17,7 +17,6 @@ RUN export uid=1000 gid=1000 && \
     chmod 0440 /etc/sudoers.d/developer && \
     chown ${uid}:${gid} -R /home/developer
 
-RUN chown developer:developer -R /usr/local/lib/node_modules
-
 USER developer
 ENV HOME /home/developer
+WORKDIR /project
