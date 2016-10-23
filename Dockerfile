@@ -1,14 +1,16 @@
 FROM ubuntu:14.04
 
+ARG UID=1001
+ARG GID=1001
+
 RUN apt-get update && \
 apt-get -y upgrade && \
 apt-get install -y nodejs npm git && \
 npm install -g bower && \
 ln -s /usr/bin/nodejs /usr/bin/node
 
-# Replace 1000 / 1000 by your user id and group id
-RUN export uid=1000 gid=1000 && \
-    mkdir -p /home/developer && \
+RUN export uid=$UID gid=$GID && \
+    mkdir -p /home/developer/project && \
     echo "developer:x:${uid}:${gid}:Developer,,,:/home/developer:/bin/bash" >> /etc/passwd && \
     echo "developer:x:${uid}:" >> /etc/group && \
     echo "developer ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/developer && \
@@ -17,4 +19,4 @@ RUN export uid=1000 gid=1000 && \
 
 USER developer
 ENV HOME /home/developer
-WORKDIR /project
+WORKDIR /home/developer/project
