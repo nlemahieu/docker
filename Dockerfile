@@ -3,9 +3,11 @@ FROM ubuntu:16.04
 ARG UID=1001
 ARG GID=1001
 
-RUN apt-get update && \
-apt-get -y upgrade && \
-apt-get install -y nodejs npm fontforge ttfautohint && \
+RUN apt-get update && apt-get -y upgrade
+RUN apt-get install -y curl && \
+curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
+apt-get install -y nodejs fontforge ttfautohint && \
+apt-get install -y build-essential && \
 npm install -g grunt-cli --save-dev && \
 npm install -g grunt-contrib-jshint --save-dev && \
 npm install -g grunt-contrib-uglify --save-dev && \
@@ -26,7 +28,7 @@ npm install -g generator-angular --save-dev && \
 npm install -g coffee-script --save-dev && \
 apt-get install -y ruby-full && \
 gem install bundler && \
-ln -s /usr/bin/nodejs /usr/bin/node
+ln -s /usr/bin/nodejs /usr/local/bin/node
 
 RUN export uid=$UID gid=$GID && \
     mkdir -p /home/developer/project && \
